@@ -7,7 +7,6 @@ import {
 	postSingleDocToModule,
 	postSingleVideoToPlaylist,
 } from "../controllers/admin-controllers.js";
-import formidable from "formidable";
 /// imports
 const adminRouter = Router();
 
