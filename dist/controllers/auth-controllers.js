@@ -43,7 +43,7 @@ function signInController(req, res) {
                 .cookie("jwt", yield generateToken(user._id), {
                 maxAge: 1000 * 60 * 60 * 3,
                 secure: true,
-                // domain: ".sisttara.com",
+                domain: ".sisttara.com",
             })
                 .json({ success: true });
         }

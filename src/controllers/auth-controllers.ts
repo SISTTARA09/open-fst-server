@@ -33,7 +33,7 @@ async function signInController(req: express.Request, res: express.Response) {
 			.cookie("jwt", await generateToken(user._id), {
 				maxAge: 1000 * 60 * 60 * 3,
 				secure: true,
-				// domain: ".sisttara.com",
+				domain: ".sisttara.com",
 			})
 			.json({ success: true });
 	} catch (error) {
