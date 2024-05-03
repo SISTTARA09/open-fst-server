@@ -45,12 +45,11 @@ async function postModuleDocs(req: express.Request, res: express.Response) {
 // Post Single Document
 async function postSingleDocToModule(req: any, res: express.Response) {
 	const form = formidable({ multiples: true });
-	const data = req.body;
 	form.parse(req, async (err, fields, files) => {
 		let data: any = {};
 		if (fields) {
 			for (const key in fields) {
-				data[key] = fields[key][0];
+				data[key] = Object(fields)[key][0];
 			}
 		}
 		console.log("data: ", data);

@@ -53,12 +53,11 @@ function postModuleDocs(req, res) {
 function postSingleDocToModule(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const form = formidable({ multiples: true });
-        const data = req.body;
         form.parse(req, (err, fields, files) => __awaiter(this, void 0, void 0, function* () {
             let data = {};
             if (fields) {
                 for (const key in fields) {
-                    data[key] = fields[key][0];
+                    data[key] = Object(fields)[key][0];
                 }
             }
             console.log("data: ", data);
